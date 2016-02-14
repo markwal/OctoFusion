@@ -1,5 +1,5 @@
 #Author-Octoprint
-#Description-Request a fabber quote from Octoprint.
+#Description-Upload to OctoPrint for slicing and printing
 # Patrick is the BOMB!!!!
 # Kevin is the BOM
 # Jeremy is a loooser
@@ -10,8 +10,6 @@ import tempfile
 import uuid
 import json
 import webbrowser
-import requests
-from requests_toolbelt import MultipartEncoder
 
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element
@@ -19,6 +17,11 @@ from xml.etree.ElementTree import SubElement
 
 from os.path import expanduser
 import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__),'libraries'))
+import requests
+from requests_toolbelt import MultipartEncoder
 
 handlers = []
 
